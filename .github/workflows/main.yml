@@ -32,15 +32,6 @@ jobs:
           sudo apt-get update && sudo apt-get install -y xvfb
           pip install seleniumbase>=4.25.0 pyvirtualdisplay>=3.0 requests>=2.31.0
 
-      - name: Set up WARP
-        uses: fscarmen/warp-on-actions@v1.2
-        with:
-          stack: dual
-        
-      - name: Setup IP
-        run: |
-          sudo curl ip.p3terx.com
-
       - name: 执行保活
         env:
           LUNES: ${{ secrets.LUNES }}
